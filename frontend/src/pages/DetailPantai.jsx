@@ -1,0 +1,100 @@
+import { Link, useParams } from 'react-router-dom'
+import useApi from '../hooks/useApi.js'
+import StatusData from '../components/StatusData.jsx'
+
+const img = (f) => import.meta.env.BASE_URL + 'img/' + f
+
+// Foto hanya tersedia untuk pantai tertentu (kunci = id pantai)
+const FOTO = {
+  2: { src: img('pantai-santolo.jpg'), alt: 'Hamparan pasir dan ombak laut selatan di Pantai Santolo, Garut', cap: 'Suasana Pantai Santolo di pesisir selatan Garut.' },
+}
+
+export default function DetailPantai() {
+  const { id } = useParams()
+  const { data: p, loading, error } = useApi(`/pantai/${id}`)
+
+  if (loading || error) {
+    return (
+      <main className="halaman">
+        <StatusData loading={loading} error={error} />
+      </main>
+    )
+  }
+
+  if (!p) {
+    return (
+      <main className="halaman">
+        <h2>Pantai tidak ditemukan</h2>
+        <p><Link to="/pantai">Kembali ke daftar pantai</Link></p>
+      </main>
+    )
+  }
+
+  const foto = FOTO[p.id]
+
+  return (
+    <main className="halaman">
+      <nav aria-label="Breadcrumb">
+        <p>
+          <Link to="/rencanakan">Rencanakan Perjalanan Anda</Link> / <Link to="/pantai">Pantai</Link> / {p.nama}
+        </p>
+      </nav>
+
+      <article>
+        <header>
+          <h2>{p.nama}</h2>
+          <p>{p.lokasi}</p>
+        </header>
+
+        {foto && (
+          <figure>
+            <img src={foto.src} alt={foto.alt} width="480" height="320" />
+            <figcaption>{foto.cap}</figcaption>
+          </figure>
+        )}
+
+        <section>
+          <h3 className="judul-polos">Deskripsi</h3>
+          <p>{p.deskripsi}</p>
+        </section>
+
+        <section>
+          <h3 className="judul-polos">Informasi Kunjungan</h3>
+          <table className="tabel-info">
+            <caption>Informasi praktis {p.nama} (perkiraan)</caption>
+            <tbody>
+              <tr><th scope="row">Jenis</th><td>Pantai</td></tr>
+              <tr><th scope="row">Lokasi</th><td>{p.lokasi}</td></tr>
+              <tr><th scope="row">Perkiraan jarak dari Bandung</th><td>± {p.jarak} km</td></tr>
+              <tr><th scope="row">Keunggulan</th><td>{p.keunggulan}</td></tr>
+              <tr><th scope="row">Tingkat kesulitan akses</th><td>Sedang (jarak jauh, jalur berkelok)</td></tr>
+              <tr><th scope="row">Harga tiket dan jam buka</th><td>Berubah sewaktu-waktu, cek langsung ke pengelola</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3 className="judul-polos">Fasilitas</h3>
+          <ul>
+            <li>Area parkir</li>
+            <li>Warung makan hidangan laut</li>
+            <li>Penginapan di sekitar pantai</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="judul-polos">Tips Berkunjung</h3>
+          <ol>
+            <li>Berangkat pagi dari Bandung karena perjalanan memakan waktu beberapa jam.</li>
+            <li>Hati-hati saat berenang karena ombak laut selatan besar dan berarus kuat.</li>
+            <li>Pertimbangkan menginap agar tidak terburu-buru.</li>
+          </ol>
+        </section>
+
+        <footer className="kembali">
+          <Link to="/pantai">Kembali ke daftar pantai</Link>
+        </footer>
+      </article>
+    </main>
+  )
+}
