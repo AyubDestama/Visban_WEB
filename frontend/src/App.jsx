@@ -4,6 +4,7 @@ import AppHeader from './components/AppHeader.jsx'
 import AppFooter from './components/AppFooter.jsx'
 import Beranda from './pages/Beranda.jsx'
 import Rencanakan from './pages/Rencanakan.jsx'
+import Informasi from './pages/Informasi.jsx'
 import Gunung from './pages/Gunung.jsx'
 import Pantai from './pages/Pantai.jsx'
 import DetailGunung from './pages/DetailGunung.jsx'
@@ -12,6 +13,7 @@ import DetailPantai from './pages/DetailPantai.jsx'
 const JUDUL = {
   '/': 'Beranda',
   '/rencanakan': 'Rencanakan Perjalanan Anda',
+  '/informasi': 'Informasi Perjalanan',
   '/gunung': 'Destinasi Gunung',
   '/pantai': 'Destinasi Pantai',
 }
@@ -25,13 +27,14 @@ export default function App() {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  // 6 halaman
+  // 7 halaman
   return (
     <>
       <AppHeader />
       <Routes>
         <Route path="/" element={<Beranda />} />
         <Route path="/rencanakan" element={<Rencanakan />} />
+        <Route path="/informasi" element={<Informasi />} />
         <Route path="/gunung" element={<Gunung />} />
         <Route path="/gunung/:id" element={<DetailGunung />} />
         <Route path="/pantai" element={<Pantai />} />

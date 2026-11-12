@@ -32,7 +32,7 @@ export default function AppHeader() {
           </li>
           <li><a href="#" onClick={(e) => e.preventDefault()}>Pengalaman</a></li>
           <li><NavLink to="/rencanakan">Rencanakan Perjalanan Anda</NavLink></li>
-          <li><a href="#" onClick={(e) => e.preventDefault()}>Informasi</a></li>
+          <li><NavLink to="/informasi">Informasi</NavLink></li>
         </ul>
       </nav>
     </header>
