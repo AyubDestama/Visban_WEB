@@ -1,4 +1,3 @@
- 
 [
   {
     "id": 1,
@@ -10,5 +9,49 @@
     "lat": -6.8806,
     "lon": 107.7336,
     "deskripsi": "Gunung di timur Bandung yang populer untuk pendakian ringan dan berkemah. Jalurnya relatif pendek sehingga cocok untuk pemula."
+  },
+  {
+    "id": 2,
+    "nama": "Gunung Malabar",
+    "lokasi": "Banjaran, Kabupaten Bandung",
+    "ketinggian": 2343,
+    "jarak": 35,
+    "tingkat": "sedang",
+    "lat": -7.1333,
+    "lon": 107.5833,
+    "deskripsi": "Kompleks pegunungan purba di selatan Bandung yang menawarkan jalur pendakian melintasi kebun teh yang sejuk dan asri."
+  },
+  {
+    "id": 3,
+    "nama": "Gunung Sunda",
+    "lokasi": "Lembang, Kabupaten Bandung Barat",
+    "ketinggian": 1850,
+    "jarak": 20,
+    "tingkat": "mudah",
+    "lat": -6.8111,
+    "lon": 107.6194,
+    "deskripsi": "Bukit dan kawasan dataran tinggi yang menyajikan pemandangan lanskap kota Bandung dari ketinggian dengan akses yang relatif mudah."
+  },
+  {
+    "id": 4,
+    "nama": "Kawah Manuk",
+    "lokasi": "Pangalengan, Kabupaten Bandung",
+    "ketinggian": 1900,
+    "jarak": 45,
+    "tingkat": "mudah",
+    "lat": -7.2150,
+    "lon": 107.6320,
+    "deskripsi": "Kawah vulkanik aktif tersembunyi di kawasan perkebunan teh Pangalengan yang dikelilingi uap belerang alami."
+  },
+  {
+    "id": 5,
+    "nama": "Gunung Artapela",
+    "lokasi": "Pacet, Kabupaten Bandung",
+    "ketinggian": 2194,
+    "jarak": 40,
+    "tingkat": "sedang",
+    "lat": -7.1167,
+    "lon": 107.7500,
+    "deskripsi": "Terkenal dengan sebutan bukit teletubbies versi Bandung karena padang rumputnya yang luas dan hijau di puncak."
   }
 ]
