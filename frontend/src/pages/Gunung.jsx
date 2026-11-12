@@ -8,7 +8,7 @@ const kapital = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 export default function Gunung() {
   const { data: gunung = [], loading, error } = useApi('/gunung')
 
-  // State untuk form pencarian/filter & validasi client-side
+  //validasi client-side
   const [keyword, setKeyword] = useState('')
   const [formError, setFormError] = useState('')
   const [filteredData, setFilteredData] = useState(null)
@@ -16,21 +16,19 @@ export default function Gunung() {
   const handleSearch = (e) => {
     e.preventDefault()
 
-    // 1. Validasi Client-Side: Cek apakah kotak pencarian kosong
     if (keyword.trim() === '') {
       setFormError('Kata kunci pencarian tidak boleh kosong!')
       setFilteredData(null)
       return
     }
 
-    // 2. Validasi Client-Side: Cek minimal karakter
     if (keyword.trim().length < 2) {
       setFormError('Masukkan minimal 2 karakter untuk melakukan pencarian.')
       setFilteredData(null)
       return
     }
 
-    // Jika lolos validasi, reset error dan filter data
+    // Jika lolos validasi, filter data
     setFormError('')
     const results = gunung.filter((g) => 
       g.nama.toLowerCase().includes(keyword.toLowerCase()) ||
@@ -39,7 +37,6 @@ export default function Gunung() {
     setFilteredData(results)
   }
 
-  // Tentukan data yang akan ditampilkan
   const dataToDisplay = filteredData !== null ? filteredData : gunung
 
   return (
@@ -51,10 +48,8 @@ export default function Gunung() {
       <h2>Destinasi Gunung</h2>
       <p>Gunung dan kawah di Bandung Raya dan sekitarnya yang dapat dikunjungi dalam sehari.</p>
 
-      {/* Bagian Header Filter Jenis & Search Bar Sejajar di Kanan */}
       <div className="header-filter-search" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '15px', marginBottom: '20px' }}>
-        
-        {/* Sisi Kiri: Filter Jenis */}
+
         <nav aria-label="Jenis destinasi" className="filter-jenis" style={{ margin: 0 }}>
           <p style={{ margin: 0 }}>
             <strong>Jenis:</strong>
@@ -64,10 +59,8 @@ export default function Gunung() {
           </p>
         </nav>
 
-        {/* Sisi Kanan: Search Bar dan Pesan Error di Atasnya */}
         <div className="search-container-right" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', width: '260px' }}>
           
-          {/* PESAN ERROR DI ATAS SEARCH BAR */}
           {formError && (
             <div style={{ 
               width: '100%', 
@@ -85,7 +78,6 @@ export default function Gunung() {
             </div>
           )}
 
-          {/* Form Pencarian */}
           <form onSubmit={handleSearch} style={{ margin: 0, width: '100%' }}>
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', width: '100%' }}>
               <input 
