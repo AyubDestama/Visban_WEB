@@ -525,6 +525,234 @@ article ol {
   margin-bottom: 8px;
 }
 
+.rencana-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  align-items: end;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: var(--aksen-muda);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+}
+
+.rencana-filter .kolom label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.rencana-filter select {
+  width: 100%;
+  padding: 8px 10px;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.rencana-filter select:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 2px;
+}
+
+.rencana-filter .teks-bantuan {
+  color: var(--lembut);
+  font-size: .85rem;
+  margin-top: 4px;
+}
+
+.rencana-hasil {
+  color: var(--lembut);
+  margin-bottom: 12px;
+}
+
+.rencana-daftar {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rencana-kartu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.rencana-kartu h4 {
+  margin: 0;
+}
+
+.rencana-kartu a {
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 600;
+}
+
+.rencana-lencana {
+  align-self: flex-start;
+  padding: 1px 10px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--aksen);
+  background: var(--aksen-muda);
+  border-radius: 999px;
+}
+
+.rencana-lokasi {
+  color: var(--lembut);
+  font-size: .9rem;
+}
+
+.rencana-kosong {
+  padding: 18px;
+  margin-bottom: 24px;
+  text-align: center;
+  border: 1px dashed #bbb;
+  border-radius: var(--radius);
+}
+
+.rencana-kosong .tombol {
+  margin-top: 10px;
+}
+
+.rencana-skeleton .sk {
+  display: block;
+  height: 14px;
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #eee 25%, #f6f6f6 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: rencana-kilau 1.2s infinite linear;
+}
+
+.rencana-skeleton .sk-pendek { width: 25%; }
+.rencana-skeleton .sk-judul { width: 70%; height: 20px; }
+.rencana-skeleton .sk-sedang { width: 55%; }
+
+@keyframes rencana-kilau {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rencana-skeleton .sk { animation: none; }
+}
+
+/* ===== Halaman Informasi ===== */
+.info-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 6px;
+}
+
+.info-nav a {
+  display: inline-block;
+  padding: 4px 14px;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--aksen-muda);
+  border: 1px solid var(--garis);
+  border-radius: 999px;
+}
+
+.info-nav a:hover,
+.info-nav a:focus-visible {
+  background: var(--aksen);
+  color: #fff;
+}
+
+.informasi section {
+  scroll-margin-top: 16px;
+}
+
+.info-tips,
+.info-kontak {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-kartu {
+  padding: 16px;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.info-kartu h4 {
+  margin-bottom: 6px;
+}
+
+.info-nomor {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sel-catatan {
+  min-width: 240px;
+}
+
+.info-cari {
+  max-width: 420px;
+  margin-bottom: 10px;
+}
+
+.info-cari label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.info-cari input {
+  width: 100%;
+  padding: 8px 12px;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.info-cari input:focus-visible,
+.info-faq summary:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 2px;
+}
+
+.info-faq details {
+  margin-bottom: 8px;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.info-faq summary {
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.info-faq details[open] summary {
+  color: var(--aksen);
+  border-bottom: 1px solid var(--garis);
+}
+
+.info-faq details p {
+  padding: 12px 16px;
+}
+
 /* ===== Responsif ===== */
 @media (max-width: 768px) {
   .site-header {
