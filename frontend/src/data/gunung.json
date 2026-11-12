@@ -1,4 +1,3 @@
- 
 [
   {
     "id": 1,
@@ -10,5 +9,104 @@
     "lat": -6.8806,
     "lon": 107.7336,
     "deskripsi": "Gunung di timur Bandung yang populer untuk pendakian ringan dan berkemah. Jalurnya relatif pendek sehingga cocok untuk pemula."
+  },
+  {
+    "id": 2,
+    "nama": "Gunung Tangkuban Parahu",
+    "lokasi": "Lembang, Bandung Barat",
+    "ketinggian": 2084,
+    "jarak": 30,
+    "tingkat": "mudah",
+    "lat": -6.7597,
+    "lon": 107.6102,
+    "deskripsi": "Gunung berapi aktif yang terkenal dengan bentuk kawah Ratu yang ikonik dan mudah diakses kendaraan wisatawan."
+  },
+  {
+    "id": 3,
+    "nama": "Gunung Malabar",
+    "lokasi": "Banjaran, Kabupaten Bandung",
+    "ketinggian": 2343,
+    "jarak": 35,
+    "tingkat": "sedang",
+    "lat": -7.1333,
+    "lon": 107.5833,
+    "deskripsi": "Kompleks pegunungan purba di selatan Bandung yang menawarkan jalur pendakian melintasi kebun teh yang sejuk dan asri."
+  },
+  {
+    "id": 4,
+    "nama": "Gunung Sunda",
+    "lokasi": "Lembang, Bandung Barat",
+    "ketinggian": 1850,
+    "jarak": 20,
+    "tingkat": "mudah",
+    "lat": -6.8111,
+    "lon": 107.6194,
+    "deskripsi": "Bukit dan kawasan dataran tinggi yang menyajikan pemandangan lanskap kota Bandung dari ketinggian dengan akses yang relatif mudah."
+  },
+  {
+    "id": 5,
+    "nama": "Kawah Manuk",
+    "lokasi": "Pangalengan, Kabupaten Bandung",
+    "ketinggian": 1900,
+    "jarak": 45,
+    "tingkat": "mudah",
+    "lat": -7.2150,
+    "lon": 107.6320,
+    "deskripsi": "Kawah vulkanik aktif tersembunyi di kawasan perkebunan teh Pangalengan yang dikelilingi uap belerang alami."
+  },
+  {
+    "id": 6,
+    "nama": "Gunung Artapela",
+    "lokasi": "Pacet, Kabupaten Bandung",
+    "ketinggian": 2194,
+    "jarak": 40,
+    "tingkat": "sedang",
+    "lat": -7.1167,
+    "lon": 107.7500,
+    "deskripsi": "Terkenal dengan sebutan bukit teletubbies versi Bandung karena padang rumputnya yang luas dan hijau di puncak."
+  },
+  {
+    "id": 7,
+    "nama": "Gunung Burangrang",
+    "lokasi": "Cisarua, Bandung Barat",
+    "ketinggian": 2064,
+    "jarak": 32,
+    "tingkat": "sedang",
+    "lat": -6.7883,
+    "lon": 107.5458,
+    "deskripsi": "Gunung purba sisa dari letusan besar Gunung Sunda purba yang menawarkan jalur pendakian menantang dan pemandangan Situ Lembang."
+  },
+  {
+    "id": 8,
+    "nama": "Gunung Patuha",
+    "lokasi": "Ciwidey, Kabupaten Bandung",
+    "ketinggian": 2434,
+    "jarak": 48,
+    "tingkat": "sedang",
+    "lat": -7.1633,
+    "lon": 107.4033,
+    "deskripsi": "Kawasan pegunungan terkenal yang menaungi objek wisata Kawah Putih dengan panorama danau kawah berwarna hijau-putih yang memukau."
+  },
+  {
+    "id": 9,
+    "nama": "Gunung Bukti Tunggul",
+    "lokasi": "Lembang / Maribaya, Bandung Barat",
+    "ketinggian": 2209,
+    "jarak": 28,
+    "tingkat": "sulit",
+    "lat": -6.8000,
+    "lon": 107.6833,
+    "deskripsi": "Salah satu titik tertinggi di kawasan Bandung Utara yang menawarkan suasana hutan alami yang lebat dan jalur pendakian yang cukup terjal."
+  },
+  {
+    "id": 10,
+    "nama": "Gunung Puntang",
+    "lokasi": "Paseh / Cimaung, Kabupaten Bandung",
+    "ketinggian": 2222,
+    "jarak": 42,
+    "tingkat": "sedang",
+    "lat": -7.1261,
+    "lon": 107.5739,
+    "deskripsi": "Kawasan pegunungan bersejarah yang memiliki sisa reruntuhan stasiun radio purba Malabar serta area perkemahan yang sangat luas dan sejuk."
   }
 ]
