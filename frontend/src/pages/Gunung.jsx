@@ -52,7 +52,7 @@ export default function Gunung() {
       <p>Gunung dan kawah di Bandung Raya dan sekitarnya yang dapat dikunjungi dalam sehari.</p>
 
       {/* Bagian Header Filter Jenis & Search Bar Sejajar di Kanan */}
-      <div className="header-filter-search" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px', marginBottom: '20px' }}>
+      <div className="header-filter-search" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '15px', marginBottom: '20px' }}>
         
         {/* Sisi Kiri: Filter Jenis */}
         <nav aria-label="Jenis destinasi" className="filter-jenis" style={{ margin: 0 }}>
@@ -64,10 +64,30 @@ export default function Gunung() {
           </p>
         </nav>
 
-        {/* Sisi Kanan: Search Bar Agak Bulet (Rounded) */}
-        <div className="search-container-right">
-          <form onSubmit={handleSearch} style={{ margin: 0 }}>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+        {/* Sisi Kanan: Search Bar dan Pesan Error di Atasnya */}
+        <div className="search-container-right" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', width: '260px' }}>
+          
+          {/* PESAN ERROR DI ATAS SEARCH BAR */}
+          {formError && (
+            <div style={{ 
+              width: '100%', 
+              backgroundColor: '#fff3cd', 
+              color: '#856404', 
+              border: '1px solid #ffeeba', 
+              padding: '6px 10px', 
+              borderRadius: '4px', 
+              fontSize: '12px', 
+              marginBottom: '8px',
+              fontFamily: 'inherit',
+              boxSizing: 'border-box'
+            }}>
+              {formError}
+            </div>
+          )}
+
+          {/* Form Pencarian */}
+          <form onSubmit={handleSearch} style={{ margin: 0, width: '100%' }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', width: '100%' }}>
               <input 
                 type="text" 
                 placeholder="Cari gunung / lokasi..." 
@@ -78,8 +98,9 @@ export default function Gunung() {
                   borderRadius: '20px', 
                   border: '1px solid #ccc', 
                   outline: 'none',
-                  width: '220px',
-                  fontSize: '13px'
+                  flex: 1,
+                  fontSize: '13px',
+                  fontFamily: 'inherit'
                 }}
               />
               <button 
@@ -92,18 +113,17 @@ export default function Gunung() {
                   color: 'white', 
                   cursor: 'pointer',
                   fontSize: '13px',
-                  fontWeight: '500'
+                  fontWeight: '500',
+                  fontFamily: 'inherit'
                 }}
               >
                 Cari
               </button>
             </div>
           </form>
+
         </div>
       </div>
-
-      {/* Pesan Error Validasi diletakkan di bawah kanan / terpisah agar rapi */}
-      {formError && <p style={{ color: 'red', fontSize: '13px', textAlign: 'right', marginTop: '-10px', marginBottom: '15px' }}>{formError}</p>}
 
       <section>
         <h3 className="judul-bagian">Daftar Gunung</h3>
