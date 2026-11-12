@@ -1,36 +1,55 @@
 import { Link, useParams } from 'react-router-dom'
 import useApi from '../hooks/useApi.js'
-import StatusData from '../components/StatusData.jsx'
+import PesanGalat from '../components/PesanGalat.jsx'
+import SkeletonDetail from '../components/detail/SkeletonDetail.jsx'
+import InfoCuaca from '../components/detail/InfoCuaca.jsx'
+import FormRencanaKunjungan from '../components/detail/FormRencanaKunjungan.jsx'
+import '../assets/detail-destinasi.css'
 
 const img = (f) => import.meta.env.BASE_URL + 'img/' + f
 
-// Foto hanya tersedia untuk pantai tertentu (kunci = id pantai)
+// Foto hanya tersedia untuk pantai tertentu. Kuncinya nama pantai (bukan id)
+// supaya foto tidak tertukar kalau urutan/id data berubah.
 const FOTO = {
-  2: { src: img('pantai-santolo.jpg'), alt: 'Hamparan pasir dan ombak laut selatan di Pantai Santolo, Garut', cap: 'Suasana Pantai Santolo di pesisir selatan Garut.' },
+  'Pantai Santolo': { src: img('pantai-santolo.jpg'), alt: 'Hamparan pasir dan ombak laut selatan di Pantai Santolo, Garut', cap: 'Suasana Pantai Santolo di pesisir selatan Garut.' },
 }
 
 export default function DetailPantai() {
   const { id } = useParams()
-  const { data: p, loading, error } = useApi(`/pantai/${id}`)
+  const { data: p, loading, error, muatUlang } = useApi(`/pantai/${id}`)
 
-  if (loading || error) {
+  // 1) Sedang memuat: tampilkan kerangka (skeleton)
+  if (loading) {
     return (
       <main className="halaman">
-        <StatusData loading={loading} error={error} />
+        <SkeletonDetail label="Memuat detail pantai..." />
       </main>
     )
   }
 
+  // 2) Gagal memuat: pesan jelas + tombol coba lagi
+  if (error) {
+    return (
+      <main className="halaman">
+        <PesanGalat judul="Detail pantai gagal dimuat" pesan={error} onCobaLagi={muatUlang} />
+        <p className="kembali"><Link to="/pantai">Kembali ke daftar pantai</Link></p>
+      </main>
+    )
+  }
+
+  // 3) Data tidak ada (404)
   if (!p) {
     return (
       <main className="halaman">
         <h2>Pantai tidak ditemukan</h2>
-        <p><Link to="/pantai">Kembali ke daftar pantai</Link></p>
+        <p>Pantai dengan nomor {id} tidak ada di daftar. Mungkin datanya sudah dihapus atau alamatnya salah ketik.</p>
+        <p className="kembali"><Link to="/pantai">Kembali ke daftar pantai</Link></p>
       </main>
     )
   }
 
-  const foto = FOTO[p.id]
+  // 4) Data siap
+  const foto = FOTO[p.nama]
 
   return (
     <main className="halaman">
@@ -73,6 +92,8 @@ export default function DetailPantai() {
           </table>
         </section>
 
+        {p.lat != null && p.lon != null && <InfoCuaca nama={p.nama} lat={p.lat} lon={p.lon} />}
+
         <section>
           <h3 className="judul-polos">Fasilitas</h3>
           <ul>
@@ -90,6 +111,8 @@ export default function DetailPantai() {
             <li>Pertimbangkan menginap agar tidak terburu-buru.</li>
           </ol>
         </section>
+
+        <FormRencanaKunjungan jenis="pantai" destinasi={p} />
 
         <footer className="kembali">
           <Link to="/pantai">Kembali ke daftar pantai</Link>
