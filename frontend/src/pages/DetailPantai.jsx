@@ -3,7 +3,6 @@ import useApi from '../hooks/useApi.js'
 import PesanGalat from '../components/PesanGalat.jsx'
 import SkeletonDetail from '../components/detail/SkeletonDetail.jsx'
 import InfoCuaca from '../components/detail/InfoCuaca.jsx'
-import FormRencanaKunjungan from '../components/detail/FormRencanaKunjungan.jsx'
 import '../assets/detail-destinasi.css'
 
 const img = (f) => import.meta.env.BASE_URL + 'img/' + f
@@ -111,8 +110,6 @@ export default function DetailPantai() {
             <li>Pertimbangkan menginap agar tidak terburu-buru.</li>
           </ol>
         </section>
-
-        <FormRencanaKunjungan jenis="pantai" destinasi={p} />
 
         <footer className="kembali">
           <Link to="/pantai">Kembali ke daftar pantai</Link>

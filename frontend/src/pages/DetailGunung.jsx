@@ -1,38 +1,56 @@
 import { Link, useParams } from 'react-router-dom'
 import useApi from '../hooks/useApi.js'
-import StatusData from '../components/StatusData.jsx'
+import PesanGalat from '../components/PesanGalat.jsx'
+import SkeletonDetail from '../components/detail/SkeletonDetail.jsx'
+import InfoCuaca from '../components/detail/InfoCuaca.jsx'
+import '../assets/detail-destinasi.css'
 
 const img = (f) => import.meta.env.BASE_URL + 'img/' + f
 const kapital = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 
-// Foto hanya tersedia untuk gunung tertentu (kunci = id gunung)
+// Foto hanya tersedia untuk gunung tertentu. Kuncinya nama gunung (bukan id)
+// supaya foto tidak tertukar kalau urutan/id data berubah.
 const FOTO = {
-  2: { src: img('tangkuban.jpg'), alt: 'Kawah Gunung Tangkuban Parahu dikelilingi hutan hijau di Lembang', cap: 'Kawah Ratu, salah satu kawah utama di Tangkuban Parahu.' },
-  4: { src: img('kawah putih.jpg'), alt: 'Danau kawah berwarna putih kehijauan di Kawah Putih Ciwidey', cap: 'Kawah Putih di kawasan Gunung Patuha, Ciwidey.' },
+  'Gunung Tangkuban Parahu': { src: img('tangkuban.jpg'), alt: 'Kawah Gunung Tangkuban Parahu dikelilingi hutan hijau di Lembang', cap: 'Kawah Ratu, salah satu kawah utama di Tangkuban Parahu.' },
+  'Kawah Putih': { src: img('kawah putih.jpg'), alt: 'Danau kawah berwarna putih kehijauan di Kawah Putih Ciwidey', cap: 'Kawah Putih di kawasan Gunung Patuha, Ciwidey.' },
 }
 
 export default function DetailGunung() {
   const { id } = useParams()
-  const { data: g, loading, error } = useApi(`/gunung/${id}`)
+  const { data: g, loading, error, muatUlang } = useApi(`/gunung/${id}`)
 
-  if (loading || error) {
+  // 1) Sedang memuat: tampilkan kerangka (skeleton)
+  if (loading) {
     return (
       <main className="halaman">
-        <StatusData loading={loading} error={error} />
+        <SkeletonDetail label="Memuat detail gunung..." />
       </main>
     )
   }
 
+  // 2) Gagal memuat: pesan jelas + tombol coba lagi
+  if (error) {
+    return (
+      <main className="halaman">
+        <PesanGalat judul="Detail gunung gagal dimuat" pesan={error} onCobaLagi={muatUlang} />
+        <p className="kembali"><Link to="/gunung">Kembali ke daftar gunung</Link></p>
+      </main>
+    )
+  }
+
+  // 3) Data tidak ada (404)
   if (!g) {
     return (
       <main className="halaman">
         <h2>Gunung tidak ditemukan</h2>
-        <p><Link to="/gunung">Kembali ke daftar gunung</Link></p>
+        <p>Gunung dengan nomor {id} tidak ada di daftar. Mungkin datanya sudah dihapus atau alamatnya salah ketik.</p>
+        <p className="kembali"><Link to="/gunung">Kembali ke daftar gunung</Link></p>
       </main>
     )
   }
 
-  const foto = FOTO[g.id]
+  // 4) Data siap
+  const foto = FOTO[g.nama]
 
   return (
     <main className="halaman">
@@ -74,6 +92,8 @@ export default function DetailGunung() {
             </tbody>
           </table>
         </section>
+
+        {g.lat != null && g.lon != null && <InfoCuaca nama={g.nama} lat={g.lat} lon={g.lon} />}
 
         <section>
           <h3 className="judul-polos">Fasilitas</h3>
