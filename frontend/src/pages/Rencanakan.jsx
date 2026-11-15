@@ -108,7 +108,7 @@ export default function Rencanakan() {
                   <option value="sulit">Sulit</option>
                 </select>
                 <p id="tingkat-bantuan" className="teks-bantuan">
-                  {tingkatAktif ? 'Hanya berlaku untuk gunung.' : 'Tidak berlaku untuk pantai.'}
+                  {tingkatAktif ? '' : '✱ Tidak berlaku untuk pantai.'}
                 </p>
               </div>
 
