@@ -1,0 +1,35 @@
+﻿{
+  "tips": [
+    { "id": 1, "judul": "Cek cuaca sebelum berangkat", "isi": "Cuaca di kawasan pegunungan dan pantai selatan bisa berubah cepat. Lihat prakiraan cuaca di halaman detail destinasi dan tunda perjalanan jika hujan deras atau angin kencang." },
+    { "id": 2, "judul": "Bawa perlengkapan yang sesuai", "isi": "Untuk gunung: jaket, sepatu bertapak kuat, dan senter. Untuk pantai: tabir surya, pakaian ganti, dan alas kaki yang nyaman." },
+    { "id": 3, "judul": "Beri kabar rencana perjalanan", "isi": "Beritahu keluarga atau teman tujuan, jam berangkat, dan perkiraan jam pulang, terutama untuk pendakian." },
+    { "id": 4, "judul": "Jaga kebersihan alam", "isi": "Bawa pulang sampah sendiri, jangan memetik tanaman, dan ikuti jalur yang sudah ditentukan petugas." },
+    { "id": 5, "judul": "Siapkan uang tunai", "isi": "Beberapa lokasi wisata belum menerima pembayaran nontunai dan sinyal sering lemah di area terpencil." },
+    { "id": 6, "judul": "Berangkat lebih pagi", "isi": "Perjalanan pagi menghindari macet di jalur wisata dan memberi waktu cukup untuk kembali sebelum gelap." }
+  ],
+  "transportasi": [
+    { "id": 1, "jenis": "Gunung", "moda": "Mobil atau motor pribadi", "waktu": "1 - 2,5 jam", "catatan": "Jalan menuju kawasan gunung sering menanjak dan berkelok. Pastikan rem dan ban dalam kondisi baik." },
+    { "id": 2, "jenis": "Gunung", "moda": "Angkutan umum dan ojek", "waktu": "2 - 3 jam", "catatan": "Biasanya perlu berganti angkutan dari terminal terdekat dan menyambung ojek ke pintu masuk." },
+    { "id": 3, "jenis": "Pantai", "moda": "Mobil atau motor pribadi", "waktu": "4 - 7 jam", "catatan": "Jarak cukup jauh sehingga sebaiknya menginap dan bergantian mengemudi." },
+    { "id": 4, "jenis": "Pantai", "moda": "Bus antarkota", "waktu": "5 - 8 jam", "catatan": "Biasanya turun di kota kabupaten, lalu lanjut dengan angkutan lokal menuju pantai." }
+  ],
+  "musim": [
+    { "id": 1, "periode": "Mei - September", "kondisi": "Musim kemarau", "saran": "Waktu paling nyaman untuk mendaki dan berkunjung ke pantai. Langit cenderung cerah." },
+    { "id": 2, "periode": "Oktober - November", "kondisi": "Masa peralihan", "saran": "Hujan sore hari mulai sering turun. Berangkat pagi dan bawa jas hujan." },
+    { "id": 3, "periode": "Desember - Maret", "kondisi": "Musim hujan", "saran": "Jalur gunung licin dan ombak pantai bisa tinggi. Periksa kondisi terkini sebelum berangkat." },
+    { "id": 4, "periode": "April - Mei", "kondisi": "Masa peralihan", "saran": "Cuaca mulai stabil. Cocok untuk wisata singkat akhir pekan." }
+  ],
+  "kontak": [
+    { "id": 1, "nama": "Layanan darurat terpadu", "nomor": "112", "keterangan": "Nomor darurat nasional untuk polisi, ambulans, dan pemadam kebakaran." },
+    { "id": 2, "nama": "Basarnas (pencarian dan pertolongan)", "nomor": "115", "keterangan": "Untuk pendaki hilang, kecelakaan di gunung, atau korban di laut." },
+    { "id": 3, "nama": "Ambulans", "nomor": "118", "keterangan": "Layanan ambulans untuk keadaan gawat darurat." }
+  ],
+  "faq": [
+    { "id": 1, "tanya": "Apakah pendakian perlu izin atau reservasi?", "jawab": "Sebagian gunung meminta pendaki mendaftar di pos jaga atau memesan tiket lebih dulu. Tanyakan ke pengelola kawasan sebelum berangkat, dan ikuti arahan petugas." },
+    { "id": 2, "tanya": "Apakah aman bermain air di pantai selatan?", "jawab": "Ombak pantai selatan umumnya besar dan arusnya kuat. Berenanglah hanya di area yang diperbolehkan petugas dan perhatikan papan peringatan." },
+    { "id": 3, "tanya": "Berapa biaya tiket masuk?", "jawab": "Harga tiket berbeda untuk setiap lokasi dan bisa berubah. Data pada situs ini hanya contoh, jadi cek harga terbaru langsung ke pengelola destinasi." },
+    { "id": 4, "tanya": "Apakah perlu menginap?", "jawab": "Gunung dekat kota biasanya bisa dikunjungi dalam sehari. Pantai selatan jaraknya jauh, jadi menginap lebih nyaman dan tidak terburu-buru." },
+    { "id": 5, "tanya": "Bagaimana jika sinyal ponsel hilang?", "jawab": "Unduh peta offline sebelum berangkat, pergi bersama rombongan, dan tetap berada di jalur resmi. Beritahu orang lain rencana perjalananmu." },
+    { "id": 6, "tanya": "Bolehkah membawa anak kecil atau lansia?", "jawab": "Boleh untuk destinasi yang mudah diakses kendaraan, seperti area kawah wisata. Hindari jalur pendakian yang panjang dan menanjak untuk mereka." }
+  ]
+}
