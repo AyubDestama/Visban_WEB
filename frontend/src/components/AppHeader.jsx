@@ -1,15 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const logo = import.meta.env.BASE_URL + 'img/Ayam_Icikiwir.jpeg'
 
 export default function AppHeader() {
   const menu = useRef(null)
+  const [terbuka, setTerbuka] = useState(false)
   const { pathname } = useLocation()
 
-  // tutup dropdown "Destinasi" setiap pindah halaman
+  // tutup dropdown "Destinasi" dan menu burger setiap pindah halaman
   useEffect(() => {
     if (menu.current) menu.current.open = false
+    setTerbuka(false)
   }, [pathname])
 
   return (
@@ -19,7 +21,11 @@ export default function AppHeader() {
         <Link to="/" className="brand-link"><h1>Visit Indonesia</h1></Link>
       </div>
 
-      <nav aria-label="Navigasi utama">
+      <button type="button" className="burger" aria-label={terbuka ? 'Tutup menu' : 'Buka menu'} aria-expanded={terbuka} aria-controls="nav-utama" onClick={() => setTerbuka((o) => !o)}>
+        <span className="burger-garis" aria-hidden="true" />
+      </button>
+
+      <nav id="nav-utama" className={terbuka ? 'terbuka' : ''} aria-label="Navigasi utama">
         <ul>
           <li>
             <details ref={menu}>

@@ -10,5 +10,104 @@
     "lat": -7.6592,
     "lon": 107.7144,
     "deskripsi": "Pantai di Pameungpeuk dengan hamparan pasir dan karang. Ombaknya cukup besar, jadi pengunjung perlu berhati-hati saat bermain air."
+  },
+  {
+    "id": 2,
+    "nama": "Pantai Santolo",
+    "lokasi": "Pameungpeuk, Garut",
+    "kabupaten": "garut",
+    "jarak": 150,
+    "keunggulan": "Pantai dengan perahu nelayan dan suasana khas pesisir",
+    "lat": -7.6700,
+    "lon": 107.6900,
+    "deskripsi": "Pantai nelayan di ujung selatan Garut yang ramai dikunjungi saat akhir pekan. Cocok untuk menikmati suasana pesisir, kuliner ikan, dan matahari terbenam."
+  },
+  {
+    "id": 3,
+    "nama": "Pantai Rancabuaya",
+    "lokasi": "Caringin, Garut",
+    "kabupaten": "garut",
+    "jarak": 165,
+    "keunggulan": "Pantai berkarang dengan pemandangan laut lepas",
+    "lat": -7.7300,
+    "lon": 107.5200,
+    "deskripsi": "Pantai di pesisir selatan Garut dengan hamparan karang dan ombak besar. Pemandangannya luas dan relatif lebih sepi dibanding pantai populer lainnya."
+  },
+  {
+    "id": 4,
+    "nama": "Pantai Cipatujah",
+    "lokasi": "Cipatujah, Tasikmalaya",
+    "kabupaten": "tasikmalaya",
+    "jarak": 155,
+    "keunggulan": "Garis pantai panjang dengan pasir gelap",
+    "lat": -7.7500,
+    "lon": 108.0200,
+    "deskripsi": "Pantai dengan garis pantai panjang di selatan Tasikmalaya. Ombaknya besar sehingga pengunjung disarankan tidak berenang terlalu jauh dari tepi."
+  },
+  {
+    "id": 5,
+    "nama": "Pantai Jayanti",
+    "lokasi": "Cidaun, Cianjur",
+    "kabupaten": "cianjur",
+    "jarak": 160,
+    "keunggulan": "Pantai selatan Cianjur dengan suasana tenang",
+    "lat": -7.4500,
+    "lon": 107.3000,
+    "deskripsi": "Pantai di pesisir selatan Cianjur yang dikelilingi pemukiman nelayan. Cocok untuk menikmati suasana laut yang tenang dan hasil tangkapan segar."
+  },
+  {
+    "id": 6,
+    "nama": "Pantai Pelabuhan Ratu",
+    "lokasi": "Pelabuhanratu, Sukabumi",
+    "kabupaten": "sukabumi",
+    "jarak": 200,
+    "keunggulan": "Pantai wisata populer dengan banyak penginapan dan kuliner",
+    "lat": -6.9800,
+    "lon": 106.5500,
+    "deskripsi": "Kawasan wisata pantai yang sudah lama dikenal di Sukabumi. Fasilitas penginapan dan warung makan cukup lengkap, sehingga nyaman untuk liburan menginap."
+  },
+  {
+    "id": 7,
+    "nama": "Pantai Karang Hawu",
+    "lokasi": "Cisolok, Sukabumi",
+    "kabupaten": "sukabumi",
+    "jarak": 210,
+    "keunggulan": "Tebing karang dengan pemandangan matahari terbenam",
+    "lat": -7.0600,
+    "lon": 106.5200,
+    "deskripsi": "Pantai berkarang di dekat Pelabuhanratu yang terkenal dengan tebing dan panorama sunset. Ombaknya kuat, jadi berenang di area ini perlu sangat hati-hati."
+  },
+  {
+    "id": 8,
+    "nama": "Pantai Pangandaran",
+    "lokasi": "Pangandaran, Pangandaran",
+    "kabupaten": "pangandaran",
+    "jarak": 220,
+    "keunggulan": "Pantai berpasir luas dengan matahari terbit dan terbenam",
+    "lat": -7.6870,
+    "lon": 108.6500,
+    "deskripsi": "Destinasi pantai besar di pesisir selatan Jawa Barat dengan pasir yang luas, banyak penginapan, kuliner laut, dan cagar alam di sekitarnya."
+  },
+  {
+    "id": 9,
+    "nama": "Pantai Batu Karas",
+    "lokasi": "Cijulang, Pangandaran",
+    "kabupaten": "pangandaran",
+    "jarak": 250,
+    "keunggulan": "Cocok untuk belajar selancar dengan ombak yang bersahabat",
+    "lat": -7.7480,
+    "lon": 108.4930,
+    "deskripsi": "Pantai kecil yang populer untuk berselancar dan belajar surfing. Suasananya santai dan dekat dengan objek wisata alam lain di Cijulang."
+  },
+  {
+    "id": 10,
+    "nama": "Pantai Ujung Genteng",
+    "lokasi": "Ciracap, Sukabumi",
+    "kabupaten": "sukabumi",
+    "jarak": 270,
+    "keunggulan": "Pantai terpencil dengan pengamatan penyu dan sunset",
+    "lat": -7.3700,
+    "lon": 106.4200,
+    "deskripsi": "Pantai di ujung selatan Sukabumi yang relatif jauh dari keramaian. Dikenal untuk melihat matahari terbenam dan penangkaran penyu di sekitarnya."
   }
 ]
